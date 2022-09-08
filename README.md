@@ -14,3 +14,7 @@
 
 - [Survey Form](https://ulnasensei.github.io/frontend/html-css/coding-challenges/cc-01-survey-form)
 - [CSS Blog](https://ulnasensei.github.io/frontend/html-css/coding-challenges/cc-02-css-blog)
+
+### Assignments
+
+- [Side Menu](https://ulnasensei.github.io/frontend/html-css/assignments/ass01-side-menu)
