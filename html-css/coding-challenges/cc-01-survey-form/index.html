@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Clarusway Survey Form</title>
+</head>
+<body>
+    <div id="container">
+        <h1>Clarusway Survey Form</h1>
+        <p> Thank you for taking the time to help us improve the platform </p>
+
+        <form action="">
+            <label for="form-name">Name</label>
+            <input type="text" name="form-name" id="form-name" placeholder="Enter your name" required>
+
+            <label for="form-surname">Surname</label>
+            <input type="text" name="form-surname" id="form-surname" placeholder="Enter your surname" required>
+
+            <label for="form-email">Email</label>
+            <input type="email" name="form-email" id="form-email" placeholder="username@example.com" required>
+
+            <p>Which option best describes your current role?</p>
+            <select name="form-current-role" id="form-current-role" required>
+                <option value="default" selected>Select current role</option>
+                <option value="student">Student</option>
+                <option value="teacher">Teacher</option>
+                <option value="full-time-job">Full Time Job</option>
+                <option value="part-time-job">Part Time Job</option>
+                <option value="full-time-learner">Full Time Learner</option>
+                <option value="part-time-learner">Part Time Learner</option>
+            </select>
+
+            <p>Would you recommend Clarusway to a friend?<p>
+            <div class="div-block">
+                <input type="radio" name="recommend" id="recommend1" value="def-yes" checked>
+                <label for="recommend1" class="label-inline">Definitely Yes</label>
+            </div>
+            <div class="div-block">
+                <input type="radio" name="recommend" id="recommend2" value="maybe">
+                <label for="recommend2" class="label-inline">Maybe</label>
+            </div>
+            <div class="div-block">
+                <input type="radio" name="recommend" id="recommend3" value="notsure">
+                <label for="recommend3" class="label-inline">Not Sure</label>
+            </div>
+            <div class="div-block">
+                <input type="radio" name="recommend" id="recommend4" value="def-no">
+                <label for="recommend4" class="label-inline">Definitely No</label>
+            </div>
+
+            <p>What is your favorite feature of Clarusway?</p>
+            <select name="fav-feature" id="fav-feature" required>
+                <option value="default" selected>Select an option</option>
+                <option value="courses">Courses</option>
+                <option value="projects">Projects</option>
+                <option value="community">Community</option>
+                <option value="mentors">Mentors</option>
+            </select>
+            
+            <p>What would you like to see improved? (Check all that apply)</p>
+            <div class="div-block">
+                <input type="checkbox" name="improve" id="cbox1" value="frontend-projects">
+                <label for="cbox1" class="label-inline">Front-end Projects</label>
+            </div>
+            <div class="div-block">
+                <input type="checkbox" name="improve" id="cbox2" value="backend-projects">
+                <label for="cbox2" class="label-inline">Back-end Projects</label>
+            </div>
+            <div class="div-block">
+                <input type="checkbox" name="improve" id="cbox3" value="data-science">
+                <label for="cbox3" class="label-inline">Data Science</label>
+            </div>
+            <div class="div-block">
+                <input type="checkbox" name="improve" id="cbox4" value="additional-courses">
+                <label for="cbox4" class="label-inline">Additional Courses</label>
+            </div>
+
+            <p>Any comments or suggestions?</p>
+            <textarea name="suggestions" id="suggestions" cols="30" rows="5" placeholder="Enter your comments and suggestions here"></textarea>
+
+            <input type="submit" value="Submit" id="submit-button">
+
+        </form>
+    </div>
+</body>
+</html>

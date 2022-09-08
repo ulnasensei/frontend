@@ -1,0 +1,42 @@
+*{
+    margin:0;
+    padding:0;
+}
+#container{
+    width: 60%;
+    margin: 100px auto;
+    border: 2px solid black;
+    padding: 50px;
+}
+#form-title{
+    margin-bottom: 20px;
+    text-align: center;
+}
+.form-cell{
+    padding: 10px;
+}
+.form-parent{
+    margin: 10px auto;
+}
+.field-title{
+    display:block;
+    width:300px;
+    float:left;
+}
+#yas{
+    width: 50px;
+}
+#sozlesme-indir{
+    background-color: rgb(255, 178, 84);
+    color: rgb(60, 60, 60);
+    display: block;
+    width: fit-content;
+    margin-bottom: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+#sozlesme-indir:hover{
+    background-color: rgb(199, 110, 0);
+    color: rgb(223, 223, 223);
+}

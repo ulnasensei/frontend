@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  overflow-x: hidden;
+}
+#header-menu-items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  float: right;
+  text-align: right;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+#header-menu-items li {
+  display: inline;
+  padding: 0 10px;
+}
+.header-link {
+  text-decoration: none;
+  color: rgb(29, 29, 29);
+  font-size: 14px;
+}
+.header-link:hover {
+  text-decoration: underline;
+}
+#header-3dots {
+  height: 20px;
+}
+#header-3dots:hover {
+  background-color: rgba(95, 95, 95, 0.2);
+  box-shadow: 0 0 20px rgba(95, 95, 95, 0.5);
+}
+#header-signin {
+  background-color: rgb(45, 104, 231);
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 8px 24px;
+  border-radius: 4px;
+}
+#header-signin:hover {
+  background-color: rgb(72, 124, 236);
+}
+.content {
+  padding: 5px;
+  margin: 0 auto;
+  position: absolute;
+  top: 27%;
+  text-align: center;
+  width: 100vw;
+}
+#search-body {
+  display: inline-block;
+  margin: 5px;
+  list-style-type: none;
+}
+#search-body li {
+  margin: 25px;
+}
+#google-logo {
+  width: 280px;
+}
+#search-bar {
+  border: 1px solid rgb(226, 226, 226);
+  border-radius: 20px;
+  padding: 5px 10px;
+  width: 600px;
+  margin-bottom: 25px;
+}
+#search {
+  border: none;
+  width: 85%;
+  height: 30px;
+  margin: 0 5px;
+  font-size: 16px;
+}
+#search:focus {
+  outline: none;
+}
+.search-buttons {
+  border: none;
+  background-color: rgb(240, 240, 240);
+  padding: 10px 20px;
+  margin: 0 8px;
+  border-radius: 5px;
+  color: rgb(61, 61, 61);
+}
+.search-buttons:hover {
+  border: 1px solid rgb(196, 196, 196);
+  padding: 9px 19px;
+}
+footer {
+  background-color: rgb(235, 233, 233);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: rgb(82, 82, 82);
+  height: 10%;
+  padding-bottom: 20px;
+}
+#country {
+  margin: 20px 30px;
+}
+.footer-list {
+  list-style-type: none;
+}
+.footer-list li {
+  display: inline;
+  padding: 0 10px;
+}
+.footer-list li a {
+  text-decoration: none;
+  color: rgb(82, 82, 82);
+}
+.footer-list li a:hover {
+    text-decoration: underline;
+    color: rgb(82, 82, 82);
+  }
+#footer-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  float: left;
+  text-align: right;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+#footer-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  float: right;
+  text-align: right;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+hr{
+    color: #3c4043;
+}

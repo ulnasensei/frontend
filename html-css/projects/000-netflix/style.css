@@ -1,0 +1,57 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient( rgba(0, 0, 0, 0.698), rgba(0, 0, 0, 0.353) ), url(./images/background_image.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;    
+    height: fit-content;
+}
+#nf-logo{
+    margin-top: 20px;
+    margin-left: 50px;
+    width: 170px;
+}
+#form-section{
+    color:white;
+    background-color: rgba(0, 0, 0, 0.644);
+    width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    text-align: left;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 5px;
+}
+#form-section p{
+    font-size: 24px;
+    font-weight: 700;
+    margin:30px;
+}
+input, select, textarea{
+    display: block;
+    margin: 20px auto; 
+    width: 300px;
+    box-sizing:content-box;
+}
+.form-text, select, textarea{
+    background-color: #333333;
+    border: none;
+    border-radius: 5px;
+    padding: 16px;
+    color: #aeaeae;
+    font-size: 1rem;
+}
+#form-submit{
+    background-color: #E50914;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 300px;
+    padding: 16px;
+}
+::placeholder{
+    color: #aeaeae;
+    opacity: 1;
+    font-size: 1rem;
+}

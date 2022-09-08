@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Netflix</title>
+</head>
+<body>
+    <div id="logo">
+        <img src="./images/Netflix_2015_logo.png" alt="logo" id="nf-logo">
+    </div>
+    <div id="form-section">
+        <p>Thank you for signing up at Netflix. Please tell us more about yourself.</p>
+
+        <form action="">
+            <input type="text" name="form-name" id="form-name" placeholder="Your name" class="form-text" required>
+            <input type="number" name="form-age" id="form-age" placeholder="Your age" min="10" max="111" class="form-text" required>
+            <input type="email" name="form-email" id="form-email" placeholder="Your email" class="form-text" required>
+            <select name="form-content-type" id="form-content-type" required>
+                <option value="default" selected disabled>Your preferred content type</option>
+                <option value="series">Series</option>
+                <option value="movies">Movies</option>
+                <option value="docu">Documentaries</option>
+            </select>
+            <select name="form-favorite-genres" id="form-genres" multiple required>
+                <option value="default" selected disabled>Your favorite genres</option>
+                <option value="action">Action</option>
+                <option value="comedy">Comedy</option>
+                <option value="romance">Romance</option>
+            </select>
+            <select name="form-genders" id="form-genders" required>
+                <option value="default" selected disabled>Your gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+            <textarea name="feedback" id="feedback" placeholder="Your feedback" rows="5" required></textarea>
+            <input type="submit" value="Submit" id="form-submit">
+            
+            
+        </form>
+    </div>
+</body>
+</html>

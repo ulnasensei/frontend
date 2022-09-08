@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/dbb6e606a0.js" crossorigin="anonymous"></script>
+    <title>Form</title>
+</head>
+<body>
+    <div id="container">
+        <h1 id="form-title">ABC Tasarım Programı Kurulum ve Satış Sözleşmesi</h1>
+        <form action="">
+            <div class="form-parent">
+                <fieldset class="form-cell">
+                    <legend>Sözleşme Onay</legend>
+                    <input type="checkbox" name="onay" id="onay" required>
+                    <label for="onay">Aşağıdaki bilgilerin doğruluğunu kabul ediyorum ve sözleşmesini onaylıyorum.</label>
+                    <br> <br>
+                    <input type="submit" value="Formu kaydet">
+                    <input type="reset" value="Formu temizle">
+                </fieldset>
+            </div>
+            <div class="form-parent">
+                <fieldset class="form-cell">
+                    <legend>Kişisel Bilgiler</legend>
+                    <label for="security-id" class="field-title">Form Güvenlik ID</label>
+                    <input type="text" disabled value="120873218">
+                    <br>
+                    <label for="ad" class="field-title">Ad</label>
+                    <input type="text" name="ad" id="ad" required>
+                    <br>
+                    <label for="soyad" class="field-title">Soyad</label>
+                    <input type="text" name="soyad" id="soyad" required>
+                    <br>
+                    <label for="yas" class="field-title">Yaş</label>
+                    <input type="number" name="yas" id="yas" min="18" max="55" required>
+                    <br>
+                    <label for="email" class="field-title">Email</label>
+                    <input type="email" name="email" id="email" required>
+                    <br>
+                    <label for="foto" class="field-title">Fotoğraf Ekle</label>
+                    <input type="file" name="foto" id="foto" required>
+                </fieldset>
+            </div>
+            <div class="form-parent">
+                <fieldset class="form-cell">
+                    <legend>Diğer Bilgiler</legend>
+                    <h4>Buradaki alanlar mesleki deneyimi kapsar</h4>
+                    <label for="sektor-giris" class="field-title">Sektöre Giriş Tarihi</label>
+                    <input type="date" name="sektor-giris" id="sektor-giris" max="2022-01-01" required>
+                    <br>
+                    <label for="deneyim" class="field-title">Sektör Deneyimi</label>
+                    <select name="deneyim" id="deneyim" required>
+                        <option value="1-5">1-5 Yıl</option>
+                        <option value="6-10">6-10 Yıl</option>
+                        <option value="11-15">11-15 Yıl</option>
+                        <option value="15+">15 üzeri</option>
+                    </select>
+                    <br>
+                    <label for="diller" class="field-title">Programlama Dilleri</label>
+                    <select name="diller" id="diller" multiple required>
+                        <option value="csharp">C#</option>
+                        <option value="php">PHP</option>
+                        <option value="java">Java</option>
+                        <option value="js">JavaScript</option>
+                        <option value="py">Python</option>
+                        <option value="cpp">C++</option>
+                        <option value="go">Go</option>
+                        <option value="lua">Lua</option>
+                    </select>
+                </fieldset>
+            </div>
+            <div class="form-parent">
+                <fieldset class="form-cell">
+                    <legend>Sözleşme Kopyası</legend>
+                    <textarea name="" id="" cols="50" rows="7" readonly>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa nisi ut voluptate vero ea error maxime, eum voluptatem quas minima necessitatibus. Corporis repellat tenetur accusamus officia quas exercitationem quaerat, cupiditate quam aperiam expedita rerum facere ullam quae error illum quos ratione sit. Recusandae ullam repellat eveniet sed doloribus modi earum!
+                    </textarea>
+                    <br> <br>
+                    <a href="sozlesme.txt" id="sozlesme-indir" download=""><i class="fa-solid fa-floppy-disk"></i> Sözleşmeyi indir</a>
+                </fieldset>
+            </div>
+            <div class="form-parent">
+                <fieldset class="form-cell">
+                    <legend>Mail Listesi</legend>
+                    <label for="mailing-list1" class="field-title">Mail listesine katılmak <strong>istiyorum</strong></label>
+                    <input type="radio" name="mailing-list" id="mailing-list1" value="mail-allow">
+                    <br>
+                    <label for="mailing-list2" class="field-title">Mail listesine katılmak <strong>istemiyorum</strong></label>
+                    <input type="radio" name="mailing-list" id="mailing-list2" value="mail-deny" checked>
+                </fieldset>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
