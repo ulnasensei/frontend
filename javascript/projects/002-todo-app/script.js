@@ -56,11 +56,10 @@ document.addEventListener("keypress", function (e) {
 });
 
 taskContainer.addEventListener("click", function (e) {
-    console.log(e.target.id);
+    console.log(e.target);
     if (e.target && e.target.id.includes("task-close")) {
         const taskID = e.target.id.replace("task-close", "");
         delete savedTasks[taskID];
-        console.log(savedTasks);
         document.getElementById(`task-${taskID}`).remove();
         if (Object.keys(savedTasks).length > 0) {
             localStorage.setItem("tasks", JSON.stringify(savedTasks));
@@ -68,11 +67,26 @@ taskContainer.addEventListener("click", function (e) {
             localStorage.removeItem("tasks");
             taskCounter = 0;
         }
-    } else if (e.target && e.target.id.includes("task-")) {
+    } else if (
+        e.target &&
+        (e.target.id.includes("task-") || [...e.target.classList].includes("task-text"))
+    ) {
+        let taskID = "";
+        if ([...e.target.classList].includes("task-text")) {
+            taskID = e.target.parentNode.id.replace("task-", "");
+        } else {
+            taskID = e.target.id
+                .replace("task-not-checked-", "")
+                .replace("task-checked-", "")
+                .replace("task-", "");
+        }
+
         //check
-        if (e.target.querySelector(`[id^="task-not-checked"]`)) {
-            const taskID = e.target.id.replace("task-", "");
-            const taskToCheck = document.getElementById(e.target.id);
+        if (
+            e.target.querySelector(`[id^="task-not-checked"]`) ||
+            e.target.id.includes("task-not-checked")
+        ) {
+            const taskToCheck = document.getElementById(`task-${taskID}`);
             const task = savedTasks[taskID].taskContent;
             savedTasks[taskID].taskStatus = true;
             const tempElem = document.createElement("div");
@@ -84,8 +98,7 @@ taskContainer.addEventListener("click", function (e) {
         }
         //uncheck
         else {
-            const taskID = e.target.id.replace("task-", "");
-            const taskToUncheck = document.getElementById(e.target.id);
+            const taskToUncheck = document.getElementById(`task-${taskID}`);
             const task = savedTasks[taskID].taskContent;
             savedTasks[taskID].taskStatus = false;
 
@@ -101,10 +114,10 @@ taskContainer.addEventListener("click", function (e) {
 
 function createTaskHTML(task, taskNo, checked = false) {
     if (checked) {
-        return `<div class="col-sm-12 col-md-12 col-lg-12 bg-success text-light rounded d-flex flex-row justify-content-between align-items-center task mt-1" id="task-${taskNo}"><div class="task-text"><span id="task-checked-${taskNo}"><i class="fa-regular fa-circle-check"></i> &nbsp;</span
+        return `<div class="col-sm-12 col-md-12 col-lg-12 bg-success text-light rounded d-flex flex-row justify-content-between align-items-center task mt-1" id="task-${taskNo}"><div class="task-text"><span><i class="fa-regular fa-circle-check" id="task-checked-${taskNo}"></i> &nbsp;</span
     >${task}</div><button class="btn-close btn-close-white task-close" id="task-close${taskNo}"></button></div>`;
     } else {
-        return `<div class="col-sm-12 col-md-12 col-lg-12 bg-danger text-light rounded d-flex flex-row justify-content-between align-items-center task mt-1" id="task-${taskNo}"><div class="task-text"><span id="task-not-checked-${taskNo}"><i class="fa-regular fa-circle"></i> &nbsp;</span
+        return `<div class="col-sm-12 col-md-12 col-lg-12 bg-danger text-light rounded d-flex flex-row justify-content-between align-items-center task mt-1" id="task-${taskNo}"><div class="task-text"><span><i class="fa-regular fa-circle" id="task-not-checked-${taskNo}"></i> &nbsp;</span
     >${task}</div><button class="btn-close btn-close-white task-close" id="task-close${taskNo}"></button></div>`;
     }
 }
