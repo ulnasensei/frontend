@@ -5,9 +5,6 @@ const taskContainer = document.getElementById("task-container");
 let taskCounter = 0;
 
 let savedTasks = {};
-// {"1":{"taskContent":"asafsdf","taskStatus":false}}
-// {"1":{"taskContent":"asdflhkajshdfü","taskStatus":false},"2":{"taskContent":"asdfasdf","taskStatus":false}}
-// {"1":{"taskContent":"asdfasdf","taskStatus":false},"2":{"taskContent":"asdfasdf","taskStatus":false}}
 
 window.addEventListener("load", () => {
     if (localStorage.getItem("tasks")) {
@@ -32,6 +29,7 @@ addButton.addEventListener("click", () => {
         localStorage.setItem("tasks", JSON.stringify(savedTasks));
 
         taskInput.value = "";
+        taskInput.focus();
     } else {
         const warningModal = new bootstrap.Modal(document.getElementById("warningModal"), {});
         warningModal.show();
@@ -56,7 +54,6 @@ document.addEventListener("keypress", function (e) {
 });
 
 taskContainer.addEventListener("click", function (e) {
-    console.log(e.target);
     if (e.target && e.target.id.includes("task-close")) {
         const taskID = e.target.id.replace("task-close", "");
         delete savedTasks[taskID];
@@ -67,26 +64,12 @@ taskContainer.addEventListener("click", function (e) {
             localStorage.removeItem("tasks");
             taskCounter = 0;
         }
-    } else if (
-        e.target &&
-        (e.target.id.includes("task-") || [...e.target.classList].includes("task-text"))
-    ) {
-        let taskID = "";
-        if ([...e.target.classList].includes("task-text")) {
-            taskID = e.target.parentNode.id.replace("task-", "");
-        } else {
-            taskID = e.target.id
-                .replace("task-not-checked-", "")
-                .replace("task-checked-", "")
-                .replace("task-", "");
-        }
+    } else {
+        const taskElem = getParentByClass(e.target, "task");
+        const taskID = taskElem.id.replace("task-", "");
 
         //check
-        if (
-            e.target.querySelector(`[id^="task-not-checked"]`) ||
-            e.target.id.includes("task-not-checked")
-        ) {
-            const taskToCheck = document.getElementById(`task-${taskID}`);
+        if (taskElem.querySelector(`[id^="task-not-checked"]`)) {
             const task = savedTasks[taskID].taskContent;
             savedTasks[taskID].taskStatus = true;
             const tempElem = document.createElement("div");
@@ -94,11 +77,10 @@ taskContainer.addEventListener("click", function (e) {
             localStorage.setItem("tasks", JSON.stringify(savedTasks));
             const checkedTask = tempElem.firstChild;
 
-            taskToCheck.parentNode.replaceChild(checkedTask, taskToCheck);
+            taskElem.parentNode.replaceChild(checkedTask, taskElem);
         }
         //uncheck
         else {
-            const taskToUncheck = document.getElementById(`task-${taskID}`);
             const task = savedTasks[taskID].taskContent;
             savedTasks[taskID].taskStatus = false;
 
@@ -107,7 +89,7 @@ taskContainer.addEventListener("click", function (e) {
             localStorage.setItem("tasks", JSON.stringify(savedTasks));
             const uncheckedTask = tempElem.firstChild;
 
-            taskToUncheck.parentNode.replaceChild(uncheckedTask, taskToUncheck);
+            taskElem.parentNode.replaceChild(uncheckedTask, taskElem);
         }
     }
 });
@@ -120,4 +102,15 @@ function createTaskHTML(task, taskNo, checked = false) {
         return `<div class="col-sm-12 col-md-12 col-lg-12 bg-danger text-light rounded d-flex flex-row justify-content-between align-items-center task mt-1" id="task-${taskNo}"><div class="task-text"><span><i class="fa-regular fa-circle" id="task-not-checked-${taskNo}"></i> &nbsp;</span
     >${task}</div><button class="btn-close btn-close-white task-close" id="task-close${taskNo}"></button></div>`;
     }
+}
+
+function getParentByClass(el, className) {
+    do {
+        if (el.classList.contains(className)) {
+            return el;
+        } else {
+            el = el.parentNode;
+        }
+        console.log(el);
+    } while (el && el.parentNode);
 }
