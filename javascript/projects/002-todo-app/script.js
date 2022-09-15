@@ -1,6 +1,7 @@
 const taskInput = document.getElementById("task-to-add");
 const addButton = document.getElementById("add-task");
 const taskContainer = document.getElementById("task-container");
+const warningModal = new bootstrap.Modal(document.getElementById("warningModal"), {});
 
 let taskCounter = 0;
 
@@ -31,7 +32,6 @@ addButton.addEventListener("click", () => {
         taskInput.value = "";
         taskInput.focus();
     } else {
-        const warningModal = new bootstrap.Modal(document.getElementById("warningModal"), {});
         warningModal.show();
     }
 });
@@ -47,7 +47,6 @@ document.addEventListener("keypress", function (e) {
             localStorage.setItem("tasks", JSON.stringify(savedTasks));
             taskInput.value = "";
         } else {
-            const warningModal = new bootstrap.Modal(document.getElementById("warningModal"), {});
             warningModal.show();
         }
     }
