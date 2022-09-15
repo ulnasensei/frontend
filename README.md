@@ -18,3 +18,12 @@
 ### Assignments
 
 - [Side Menu](https://ulnasensei.github.io/frontend/html-css/assignments/ass01-side-menu)
+
+---
+
+## Javascript
+
+### Projects
+
+- Checkout Page (-)
+- [Todo List](https://ulnasensei.github.io/frontend/javascript/projects/002-todo-app)
