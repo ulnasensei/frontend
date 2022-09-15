@@ -1,0 +1,7 @@
+.container {
+    max-width: 680px;
+    min-height: 100vh;
+}
+.task {
+    min-height: 50px;
+}
