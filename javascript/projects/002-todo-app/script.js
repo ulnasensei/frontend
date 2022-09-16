@@ -40,12 +40,7 @@ document.addEventListener("keypress", function (e) {
         if (document.getElementById("warningModal").classList.toString().includes("show")) {
             document.getElementById("modal-close").click();
         } else if (taskInput.value) {
-            savedTasks[++taskCounter] = { taskContent: taskInput.value, taskStatus: false };
-
-            taskContainer.innerHTML += createTaskHTML(taskInput.value, taskCounter);
-
-            localStorage.setItem("tasks", JSON.stringify(savedTasks));
-            taskInput.value = "";
+            addButton.click();
         } else {
             warningModal.show();
         }
@@ -53,6 +48,7 @@ document.addEventListener("keypress", function (e) {
 });
 
 taskContainer.addEventListener("click", function (e) {
+    const taskElem = getParentByClass(e.target, "task");
     if (e.target && e.target.id.includes("task-close")) {
         const taskID = e.target.id.replace("task-close", "");
         delete savedTasks[taskID];
@@ -63,8 +59,21 @@ taskContainer.addEventListener("click", function (e) {
             localStorage.removeItem("tasks");
             taskCounter = 0;
         }
-    } else {
-        const taskElem = getParentByClass(e.target, "task");
+    } else if (e.target && e.target.classList.toString().includes("btn-save")) {
+        const taskID = e.target.id.replace("task-edit-", "");
+        const textBox = taskElem.querySelector(`#task-text-${taskID}`);
+        textBox.disabled = true;
+
+        savedTasks[taskID].taskContent = textBox.value;
+        localStorage.setItem("tasks", JSON.stringify(savedTasks));
+        e.target.classList.replace("btn-save", "btn-edit");
+    } else if (e.target && e.target.id.includes("task-edit")) {
+        e.target.classList.replace("btn-edit", "btn-save");
+        const taskID = e.target.id.replace("task-edit-", "");
+        const textBox = taskElem.querySelector(`#task-text-${taskID}`);
+        textBox.disabled = false;
+        textBox.focus();
+    } else if (!taskElem.querySelector(".btn-save")) {
         const taskID = taskElem.id.replace("task-", "");
 
         //check
@@ -76,7 +85,7 @@ taskContainer.addEventListener("click", function (e) {
             localStorage.setItem("tasks", JSON.stringify(savedTasks));
             const checkedTask = tempElem.firstChild;
 
-            taskElem.parentNode.replaceChild(checkedTask, taskElem);
+            taskContainer.replaceChild(checkedTask, taskElem);
         }
         //uncheck
         else {
@@ -88,18 +97,16 @@ taskContainer.addEventListener("click", function (e) {
             localStorage.setItem("tasks", JSON.stringify(savedTasks));
             const uncheckedTask = tempElem.firstChild;
 
-            taskElem.parentNode.replaceChild(uncheckedTask, taskElem);
+            taskContainer.replaceChild(uncheckedTask, taskElem);
         }
     }
 });
 
 function createTaskHTML(task, taskNo, checked = false) {
     if (checked) {
-        return `<div class="col-sm-12 col-md-12 col-lg-12 bg-success text-light rounded d-flex flex-row justify-content-between align-items-center task mt-1" id="task-${taskNo}"><div class="task-text"><span><i class="fa-regular fa-circle-check" id="task-checked-${taskNo}"></i> &nbsp;</span
-    >${task}</div><button class="btn-close btn-close-white task-close" id="task-close${taskNo}"></button></div>`;
+        return `<div class="col-sm-12 col-md-12 col-lg-12 bg-success text-light rounded d-flex flex-row justify-content-between align-items-center task mt-1" id="task-${taskNo}"><div class="task-text"><span><i class="fa-regular fa-circle-check" id="task-checked-${taskNo}"></i> &nbsp;</span><input type="text" class="text-light" id="task-text-${taskNo}" disabled value="${task}"/></div><div><button class="btn-edit btn-close-white task-edit float-right" id="task-edit-${taskNo}"></button><button class="btn-close btn-close-white task-close" id="task-close${taskNo}"></button></div></div>`;
     } else {
-        return `<div class="col-sm-12 col-md-12 col-lg-12 bg-danger text-light rounded d-flex flex-row justify-content-between align-items-center task mt-1" id="task-${taskNo}"><div class="task-text"><span><i class="fa-regular fa-circle" id="task-not-checked-${taskNo}"></i> &nbsp;</span
-    >${task}</div><button class="btn-close btn-close-white task-close" id="task-close${taskNo}"></button></div>`;
+        return `<div class="col-sm-12 col-md-12 col-lg-12 bg-danger text-light rounded d-flex flex-row justify-content-between align-items-center task mt-1" id="task-${taskNo}"><div class="task-text"><span><i class="fa-regular fa-circle" id="task-not-checked-${taskNo}"></i> &nbsp;</span><input type="text" class="text-light" id="task-text-${taskNo}" disabled value="${task}"/></div><div><button class="btn-edit btn-close-white task-edit float-right" id="task-edit-${taskNo}"></button><button class="btn-close btn-close-white task-close" id="task-close${taskNo}"></button></div></div>`;
     }
 }
 

@@ -5,3 +5,32 @@
 .task {
     min-height: 50px;
 }
+.btn-edit {
+    box-sizing: content-box;
+    width: 1em;
+    height: 1em;
+    padding: 0.25em 0.25em;
+    color: #000;
+    background: transparent url("img/edit.svg") center/1em auto no-repeat;
+    border: 0;
+    border-radius: 0.25rem;
+    opacity: 0.5;
+}
+.btn-save {
+    box-sizing: content-box;
+    width: 1em;
+    height: 1em;
+    padding: 0.25em 0.25em;
+    color: #000;
+    background: transparent url("img/save.svg") center/1em auto no-repeat;
+    border: 0;
+    border-radius: 0.25rem;
+    opacity: 0.5;
+}
+
+input {
+    -webkit-appearance: none;
+    outline: none;
+    border: none;
+    background: none;
+}
