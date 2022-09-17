@@ -1,7 +1,10 @@
 const taskInput = document.getElementById("task-to-add");
 const addButton = document.getElementById("add-task");
 const taskContainer = document.getElementById("task-container");
+const storageToggle = document.getElementById("storage-toggle");
 const warningModal = new bootstrap.Modal(document.getElementById("warningModal"), {});
+
+let localStorageStatus = true;
 
 let taskCounter = 0;
 
@@ -19,6 +22,21 @@ window.addEventListener("load", () => {
             );
         }
     }
+    if (localStorage.getItem("save")) {
+        localStorageStatus = localStorage.getItem("save") == "true";
+        console.log(typeof localStorageStatus);
+    }
+    if (localStorageStatus) {
+        storageToggle.checked = true;
+    }
+});
+
+storageToggle.addEventListener("change", (e) => {
+    localStorageStatus = e.target.checked;
+    localStorage.setItem("save", e.target.checked);
+    if (localStorageStatus) {
+        localStorage.setItem("tasks", JSON.stringify(savedTasks));
+    }
 });
 
 addButton.addEventListener("click", () => {
@@ -26,8 +44,9 @@ addButton.addEventListener("click", () => {
         savedTasks[++taskCounter] = { taskContent: taskInput.value, taskStatus: false };
 
         taskContainer.innerHTML += createTaskHTML(taskInput.value, taskCounter);
-
-        localStorage.setItem("tasks", JSON.stringify(savedTasks));
+        if (localStorageStatus) {
+            localStorage.setItem("tasks", JSON.stringify(savedTasks));
+        }
 
         taskInput.value = "";
         taskInput.focus();
@@ -53,11 +72,13 @@ taskContainer.addEventListener("click", function (e) {
         const taskID = e.target.id.replace("task-close", "");
         delete savedTasks[taskID];
         document.getElementById(`task-${taskID}`).remove();
-        if (Object.keys(savedTasks).length > 0) {
-            localStorage.setItem("tasks", JSON.stringify(savedTasks));
-        } else {
-            localStorage.removeItem("tasks");
-            taskCounter = 0;
+        if (localStorageStatus) {
+            if (Object.keys(savedTasks).length > 0) {
+                localStorage.setItem("tasks", JSON.stringify(savedTasks));
+            } else {
+                localStorage.removeItem("tasks");
+                taskCounter = 0;
+            }
         }
     } else if (e.target && e.target.classList.toString().includes("btn-save")) {
         const taskID = e.target.id.replace("task-edit-", "");
@@ -65,7 +86,10 @@ taskContainer.addEventListener("click", function (e) {
         textBox.disabled = true;
 
         savedTasks[taskID].taskContent = textBox.value;
-        localStorage.setItem("tasks", JSON.stringify(savedTasks));
+        if (localStorageStatus) {
+            localStorage.setItem("tasks", JSON.stringify(savedTasks));
+        }
+
         e.target.classList.replace("btn-save", "btn-edit");
     } else if (e.target && e.target.id.includes("task-edit")) {
         e.target.classList.replace("btn-edit", "btn-save");
@@ -82,7 +106,9 @@ taskContainer.addEventListener("click", function (e) {
             savedTasks[taskID].taskStatus = true;
             const tempElem = document.createElement("div");
             tempElem.innerHTML = createTaskHTML(task, taskID, true);
-            localStorage.setItem("tasks", JSON.stringify(savedTasks));
+            if (localStorageStatus) {
+                localStorage.setItem("tasks", JSON.stringify(savedTasks));
+            }
             const checkedTask = tempElem.firstChild;
 
             taskContainer.replaceChild(checkedTask, taskElem);
@@ -94,7 +120,9 @@ taskContainer.addEventListener("click", function (e) {
 
             const tempElem = document.createElement("div");
             tempElem.innerHTML = createTaskHTML(task, taskID, false);
-            localStorage.setItem("tasks", JSON.stringify(savedTasks));
+            if (localStorageStatus) {
+                localStorage.setItem("tasks", JSON.stringify(savedTasks));
+            }
             const uncheckedTask = tempElem.firstChild;
 
             taskContainer.replaceChild(uncheckedTask, taskElem);
