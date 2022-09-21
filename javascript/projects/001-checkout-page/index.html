@@ -34,135 +34,274 @@
             </div>
             <div class="row">
                 <div class="col col-xs-12 col-sm-6 col-md-6 col-lg-6" id="customer-info-form">
-                    <div class="row">
-                        <h4>Contact Information</h4>
-                        <label for="customer-email" class="form-label">Email</label>
-                        <div class="mb-2 input-group">
-                            <span class="input-group-text"
-                                ><i class="fa-solid fa-envelope"></i
-                            ></span>
-                            <input
-                                type="email"
-                                class="form-control"
-                                id="customer-email"
-                                placeholder="name@example.com"
-                            />
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <i class="fa-solid fa-address-book"></i> &nbsp;
+                            <strong>Contact Information</strong>
                         </div>
-                        <label for="customer-phone" class="form-label">Phone</label>
-                        <div class="mb-2 input-group">
-                            <span class="input-group-text"><i class="fa-solid fa-phone"></i></span>
-                            <input
-                                type="phone"
-                                class="form-control"
-                                id="customer-phone"
-                                placeholder="5551112233"
-                            />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <h4 class="mt-4">Shipping Information</h4>
-                        <label for="customer-name" class="form-label">Full Name</label>
-                        <div class="mb-2 input-group">
-                            <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
-                            <input
-                                type="text"
-                                class="form-control"
-                                id="customer-name"
-                                placeholder="Sherlock Holmes"
-                            />
-                        </div>
-                        <label for="customer-address" class="form-label">Address</label>
-                        <div class="mb-2 input-group">
-                            <span class="input-group-text"
-                                ><i class="fa-solid fa-building"></i
-                            ></span>
-                            <input
-                                type="text"
-                                class="form-control"
-                                id="customer-address"
-                                placeholder="221B Baker St."
-                            />
-                        </div>
-                        <label for="customer-city" class="form-label">City</label>
-                        <div class="mb-2 input-group">
-                            <span class="input-group-text"
-                                ><i class="fa-solid fa-location-dot"></i
-                            ></span>
-                            <input
-                                type="text"
-                                class="form-control"
-                                id="customer-city"
-                                placeholder="London"
-                            />
-                        </div>
-                        <label for="customer-country">Country</label>
-                        <div class="mb-2 input-group">
-                            <span class="input-group-text"
-                                ><i class="fa-solid fa-globe fa-fix"></i
-                            ></span>
-                            <select class="form-select">
-                                <option selected value="uk">U.K.</option>
-                                <option value="us">U.S.A.</option>
-                                <option value="it">Italy</option>
-                            </select>
-                        </div>
-                        <label for="customer-postcode">Post Code</label>
-                        <div class="mb-2 input-group">
-                            <span class="input-group-text"
-                                ><i class="fa-solid fa-inbox fa-fix"></i
-                            ></span>
-                            <input
-                                type="number"
-                                class="form-control"
-                                id="customer-number"
-                                placeholder="12345"
-                            />
-                        </div>
-                        <div class="mb-2">
-                            <div class="form-check">
+                        <div class="card-body">
+                            <label for="customer-email" class="form-label">Email</label>
+                            <div class="mb-2 input-group">
+                                <span class="input-group-text"
+                                    ><i class="fa-solid fa-envelope"></i
+                                ></span>
                                 <input
-                                    class="form-check-input"
-                                    type="checkbox"
-                                    value=""
-                                    id="save-info"
+                                    type="email"
+                                    class="form-control"
+                                    id="customer-email"
+                                    placeholder="name@example.com"
                                 />
-                                <label class="form-check-label" for="save-info">
-                                    See this information next time.
-                                </label>
+                            </div>
+                            <label for="customer-phone" class="form-label">Phone</label>
+                            <div class="mb-2 input-group">
+                                <span class="input-group-text"
+                                    ><i class="fa-solid fa-phone"></i
+                                ></span>
+                                <input
+                                    type="phone"
+                                    class="form-control"
+                                    id="customer-phone"
+                                    placeholder="5551112233"
+                                />
                             </div>
                         </div>
                     </div>
-                    <div class="mb-2 float-end">
-                        <button type="button" class="btn btn-primary" id="checkout-continue">
-                            Continue
-                        </button>
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <i class="fa-solid fa-truck-fast"></i> &nbsp;<strong
+                                >Shipping Information</strong
+                            >
+                        </div>
+                        <div class="card-body">
+                            <label for="customer-name" class="form-label">Full Name</label>
+                            <div class="mb-2 input-group">
+                                <span class="input-group-text"
+                                    ><i class="fa-solid fa-user"></i
+                                ></span>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="customer-name"
+                                    placeholder="Sherlock Holmes"
+                                />
+                            </div>
+                            <label for="customer-address" class="form-label">Address</label>
+                            <div class="mb-2 input-group">
+                                <span class="input-group-text"
+                                    ><i class="fa-solid fa-building"></i
+                                ></span>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="customer-address"
+                                    placeholder="221B Baker St."
+                                />
+                            </div>
+                            <label for="customer-city" class="form-label">City</label>
+                            <div class="mb-2 input-group">
+                                <span class="input-group-text"
+                                    ><i class="fa-solid fa-location-dot"></i
+                                ></span>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="customer-city"
+                                    placeholder="London"
+                                />
+                            </div>
+                            <label for="customer-country">Country</label>
+                            <div class="mb-2 input-group">
+                                <span class="input-group-text"
+                                    ><i class="fa-solid fa-globe fa-fix"></i
+                                ></span>
+                                <select class="form-select">
+                                    <option selected value="uk">U.K.</option>
+                                    <option value="us">U.S.A.</option>
+                                    <option value="it">Italy</option>
+                                </select>
+                            </div>
+                            <label for="customer-postcode">Post Code</label>
+                            <div class="mb-2 input-group">
+                                <span class="input-group-text"
+                                    ><i class="fa-solid fa-inbox fa-fix"></i
+                                ></span>
+                                <input
+                                    type="number"
+                                    class="form-control"
+                                    id="customer-number"
+                                    placeholder="12345"
+                                    min="10000"
+                                    max="99999"
+                                />
+                            </div>
+                            <div class="mb-2">
+                                <div class="form-check">
+                                    <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        value=""
+                                        id="save-info"
+                                    />
+                                    <label class="form-check-label" for="save-info">
+                                        See this information next time.
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="float-end">
+                                <button
+                                    type="button"
+                                    class="btn btn-primary"
+                                    id="checkout-continue"
+                                >
+                                    Continue
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="row"></div>
                 </div>
-                <div class="col col-xs-12 col-sm-6 col-md-6 col-lg-6" id="cart-summary">
+                <div class="col col-xs-12 col-sm-6 col-md-6 col-lg-4" id="cart-summary">
                     <div class="card">
                         <div class="card-header">
                             <i class="fa-solid fa-cart-shopping"></i>
                             &nbsp;<strong>Cart</strong>
                             <span class="float-end"
-                                ><i class="fa-solid fa-dollar-sign" id="currency-symbol"></i
-                                ><span id="cart-total">123</span></span
+                                ><i class="fa-solid fa-dollar-sign"></i>&nbsp;<strong
+                                    ><span id="cart-total">0</span></strong
+                                >
+                                for <strong><span id="item-count">0</span></strong> items</span
                             >
                         </div>
                         <div class="card-body">
-                            <div class="row mb-4" id="item-1">
+                            <div class="row mb-4 item" id="item-1">
                                 <img
                                     src="img/photo1.png"
-                                    class="col-sm-6 col-md-6 col-lg-6"
+                                    class="col-sm-6 col-md-6 col-lg-5"
                                     alt=""
                                 />
+                                <div class="col-sm-6 col-md-6 col-lg-7">
+                                    <div class="col-12 d-flex justify-content-between">
+                                        <h5>Backpack</h5>
+                                        <button class="btn btn-link remove">Remove</button>
+                                    </div>
+                                    <div class="col-12">
+                                        <p>
+                                            <i class="fa-solid fa-dollar-sign"></i>&nbsp;<span
+                                                class="price"
+                                                >27.98</span
+                                            >
+                                        </p>
+                                    </div>
+                                    <div class="btn-group col-12">
+                                        <button type="button" class="btn btn-danger btn-decrease">
+                                            -
+                                        </button>
+                                        <button
+                                            type="button"
+                                            class="btn col-4 btn-item-count"
+                                            disabled
+                                        >
+                                            1
+                                        </button>
+                                        <button type="button" class="btn btn-success btn-increase">
+                                            +
+                                        </button>
+                                    </div>
+                                    <div class="col-12 mt-2 d-flex justify-content-between">
+                                        <p>Item total:</p>
+                                        <p>
+                                            <i class="fa-solid fa-dollar-sign"></i>&nbsp;<span
+                                                class="item-total"
+                                                >27.98</span
+                                            >
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="row" id="item-2">
+                            <div class="row mb-4 item" id="item-2">
                                 <img
                                     src="img/photo2.png"
-                                    class="col-sm-6 col-md-6 col-lg-6"
+                                    class="col-sm-6 col-md-6 col-lg-5"
                                     alt=""
                                 />
+                                <div class="col-sm-6 col-md-6 col-lg-7">
+                                    <div class="col-12 d-flex justify-content-between">
+                                        <h5>Shoes</h5>
+                                        <button class="btn btn-link remove">Remove</button>
+                                    </div>
+                                    <div class="col-12">
+                                        <p>
+                                            <i class="fa-solid fa-dollar-sign"></i>&nbsp;<span
+                                                class="price"
+                                                >45.99</span
+                                            >
+                                        </p>
+                                    </div>
+                                    <div class="btn-group col-12">
+                                        <button type="button" class="btn btn-danger btn-decrease">
+                                            -
+                                        </button>
+                                        <button
+                                            type="button"
+                                            class="btn col-4 btn-item-count"
+                                            disabled
+                                        >
+                                            1
+                                        </button>
+                                        <button type="button" class="btn btn-success btn-increase">
+                                            +
+                                        </button>
+                                    </div>
+                                    <div class="col-12 mt-2 d-flex justify-content-between">
+                                        <p>Item total:</p>
+                                        <p>
+                                            <i class="fa-solid fa-dollar-sign"></i>&nbsp;<span
+                                                class="item-total"
+                                                >45.99</span
+                                            >
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-4 cart-total">
+                                <hr />
+                                <div class="d-flex justify-content-between">
+                                    <p><strong>Subtotal:</strong></p>
+                                    <p>
+                                        <i class="fa-solid fa-dollar-sign"></i>&nbsp;<span
+                                            id="subtotal"
+                                            >0</span
+                                        >
+                                    </p>
+                                </div>
+                                <hr />
+                                <div class="d-flex justify-content-between">
+                                    <p><strong>VAT (8%):</strong></p>
+                                    <p>
+                                        <i class="fa-solid fa-dollar-sign"></i>&nbsp;<span id="vat"
+                                            >0</span
+                                        >
+                                    </p>
+                                </div>
+                                <hr />
+                                <div class="d-flex justify-content-between">
+                                    <p><strong>Shipping:</strong></p>
+                                    <p>
+                                        <i class="fa-solid fa-dollar-sign"></i>&nbsp;<span
+                                            id="shipping"
+                                            >0</span
+                                        >
+                                    </p>
+                                </div>
+                                <hr />
+                                <div class="d-flex justify-content-between">
+                                    <p><strong>Total:</strong></p>
+                                    <p>
+                                        <i class="fa-solid fa-dollar-sign"></i>&nbsp;<span
+                                            id="total"
+                                            >0</span
+                                        >
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
