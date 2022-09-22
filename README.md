@@ -27,3 +27,7 @@
 
 -   [Checkout Page](https://ulnasensei.github.io/frontend/javascript/projects/001-checkout-page)
 -   [Todo List](https://ulnasensei.github.io/frontend/javascript/projects/002-todo-app)
+
+## Coding Challenges
+
+- [Reverse String](https://ulnasensei.github.io/frontend/javascript/coding-challenges/cc-01-reverse-string)
