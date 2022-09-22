@@ -20,4 +20,4 @@ const bracketValidator = (input) => {
     return !stack.length ? true : false;
 };
 
-console.log(bracketValidator(str));
+alert(bracketValidator(str));
