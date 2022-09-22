@@ -31,3 +31,4 @@
 ## Coding Challenges
 
 - [Reverse String](https://ulnasensei.github.io/frontend/javascript/coding-challenges/cc-01-reverse-string)
+- [Reverse Words](https://ulnasensei.github.io/frontend/javascript/coding-challenges/cc-01-reverse-words)
