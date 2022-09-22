@@ -34,3 +34,4 @@
 - [Reverse Words](https://ulnasensei.github.io/frontend/javascript/coding-challenges/cc-02-reverse-words)
 - [Merge Arrays](https://ulnasensei.github.io/frontend/javascript/coding-challenges/cc-03-merge-arrays)
 - [Roman Numerals](https://ulnasensei.github.io/frontend/javascript/coding-challenges/cc-04-roman-numerals)
+- [Vowel Counter](https://ulnasensei.github.io/frontend/javascript/coding-challenges/cc-05-vowels)
