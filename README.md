@@ -33,3 +33,4 @@
 - [Reverse String](https://ulnasensei.github.io/frontend/javascript/coding-challenges/cc-01-reverse-string)
 - [Reverse Words](https://ulnasensei.github.io/frontend/javascript/coding-challenges/cc-02-reverse-words)
 - [Merge Arrays](https://ulnasensei.github.io/frontend/javascript/coding-challenges/cc-03-merge-arrays)
+- [Roman Numerals](https://ulnasensei.github.io/frontend/javascript/coding-challenges/cc-04-roman-numerals)
