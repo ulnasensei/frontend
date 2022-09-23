@@ -19,18 +19,18 @@ button {
 }
 ::placeholder {
     /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: whitesmoke !important;
+    color: rgb(220, 220, 220) !important;
     opacity: 1 !important; /* Firefox */
 }
 
 :-ms-input-placeholder {
     /* Internet Explorer 10-11 */
-    color: whitesmoke !important;
+    color: rgb(220, 220, 220) !important;
 }
 
 ::-ms-input-placeholder {
     /* Microsoft Edge */
-    color: whitesmoke !important;
+    color: rgb(220, 220, 220) !important;
 }
 .card {
     box-shadow: 0 12px 0px -4px rgba(255, 255, 255, 0.734);
