@@ -27,6 +27,7 @@
 
 -   [Checkout Page](https://ulnasensei.github.io/frontend/javascript/projects/001-checkout-page)
 -   [Todo List](https://ulnasensei.github.io/frontend/javascript/projects/002-todo-app)
+-   [IOS Calculator](https://ulnasensei.github.io/frontend/javascript/projects/003-ios-calculator)
 
 ### Coding Challenges
 
