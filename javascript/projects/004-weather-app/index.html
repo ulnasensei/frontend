@@ -32,12 +32,14 @@
         <title>Weather App</title>
     </head>
     <body class="bg-success">
-        <div class="container d-flex justify-content-center flex-column" id="inputDiv">
+        <div class="container" id="inputDiv">
             <div class="row m-5">
-                <h1 class="col-12 text-center text-white">Weather App</h1>
+                <h1 class="col-12 text-center text-white d-flex justify-content-center">
+                    Weather App
+                </h1>
             </div>
-            <div class="row">
-                <div class="col-8">
+            <div class="row d-flex flex-row justify-content-center">
+                <div class="col-8 col-lg-4">
                     <input
                         type="text"
                         class="form-control text-white"
@@ -47,9 +49,7 @@
                         autocomplete="off"
                     />
                 </div>
-                <div class="col-4">
-                    <button class="btn btn-warning">Search</button>
-                </div>
+                <button class="btn btn-warning col-4 col-lg-2">Search</button>
             </div>
         </div>
         <div class="container mt-5" id="results">
@@ -64,11 +64,69 @@
                         <div class="weather text-center">Sunny</div>
                     </div>
                 </div>
+                <div class="card result rounded-4 pt-3 pb-3 m-2">
+                    <div class="card-body">
+                        <div class="city fs-5">
+                            İzmir <sup class="bg-warning p-1 rounded country">TR</sup>
+                        </div>
+                        <div class="temp text-center">32&deg;C</div>
+                        <div class="symbol text-center"><i class="fa-solid fa-sun"></i></div>
+                        <div class="weather text-center">Sunny</div>
+                    </div>
+                </div>
+                <div class="card result rounded-4 pt-3 pb-3 m-2">
+                    <div class="card-body">
+                        <div class="city fs-5">
+                            İzmir <sup class="bg-warning p-1 rounded country">TR</sup>
+                        </div>
+                        <div class="temp text-center">32&deg;C</div>
+                        <div class="symbol text-center"><i class="fa-solid fa-sun"></i></div>
+                        <div class="weather text-center">Sunny</div>
+                    </div>
+                </div>
+                <div class="card result rounded-4 pt-3 pb-3 m-2">
+                    <div class="card-body">
+                        <div class="city fs-5">
+                            İzmir <sup class="bg-warning p-1 rounded country">TR</sup>
+                        </div>
+                        <div class="temp text-center">32&deg;C</div>
+                        <div class="symbol text-center"><i class="fa-solid fa-sun"></i></div>
+                        <div class="weather text-center">Sunny</div>
+                    </div>
+                </div>
+                <div class="card result rounded-4 pt-3 pb-3 m-2">
+                    <div class="card-body">
+                        <div class="city fs-5">
+                            İzmir <sup class="bg-warning p-1 rounded country">TR</sup>
+                        </div>
+                        <div class="temp text-center">32&deg;C</div>
+                        <div class="symbol text-center"><i class="fa-solid fa-sun"></i></div>
+                        <div class="weather text-center">Sunny</div>
+                    </div>
+                </div>
+                <div class="card result rounded-4 pt-3 pb-3 m-2">
+                    <div class="card-body">
+                        <div class="city fs-5">
+                            İzmir <sup class="bg-warning p-1 rounded country">TR</sup>
+                        </div>
+                        <div class="temp text-center">32&deg;C</div>
+                        <div class="symbol text-center"><i class="fa-solid fa-sun"></i></div>
+                        <div class="weather text-center">Sunny</div>
+                    </div>
+                </div>
+                <div class="card result rounded-4 pt-3 pb-3 m-2">
+                    <div class="card-body">
+                        <div class="city fs-5">
+                            İzmir <sup class="bg-warning p-1 rounded country">TR</sup>
+                        </div>
+                        <div class="temp text-center">32&deg;C</div>
+                        <div class="symbol text-center"><i class="fa-solid fa-sun"></i></div>
+                        <div class="weather text-center">Sunny</div>
+                    </div>
+                </div>
             </div>
         </div>
-        <footer
-            class="navbar fixed-bottom text-white d-flex justify-content-center align-items-center fs-4 mb-2"
-        >
+        <footer class="text-white d-flex justify-content-center align-items-center fs-4 mb-3">
             Powered by&nbsp;
             <a href="https://openweathermap.org/" target="_blank" rel="noopener noreferrer"
                 ><img

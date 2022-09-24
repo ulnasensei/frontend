@@ -2,8 +2,7 @@
 body {
     font-family: "Montserrat", sans-serif !important;
 }
-#input,
-.input-group-text {
+#input {
     border: none;
     background-image: none;
     background-color: transparent;
@@ -39,8 +38,8 @@ button {
     width: 14rem !important;
 }
 .temp {
-    font-size: 5rem;
+    font-size: 4rem;
 }
 .symbol {
-    font-size: 4rem;
+    font-size: 3.5rem;
 }

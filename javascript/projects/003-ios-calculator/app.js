@@ -8,56 +8,24 @@ let numberOneDone = false;
 
 let floating = false;
 
+const operators = {
+    add: ["+", "+"],
+    subtract: ["-", "-"],
+    divide: ["/", "÷"],
+    multiply: ["*", "x"],
+};
+
 btnContainer.addEventListener("click", (e) => {
-    if (e.target.id == "n0") {
-        input.innerText += "0";
-    } else if (e.target.id == "n1") {
-        input.innerText += "1";
-    } else if (e.target.id == "n2") {
-        input.innerText += "2";
-    } else if (e.target.id == "n3") {
-        input.innerText += "3";
-    } else if (e.target.id == "n4") {
-        input.innerText += "4";
-    } else if (e.target.id == "n5") {
-        input.innerText += "5";
-    } else if (e.target.id == "n6") {
-        input.innerText += "6";
-    } else if (e.target.id == "n7") {
-        input.innerText += "7";
-    } else if (e.target.id == "n8") {
-        input.innerText += "8";
-    } else if (e.target.id == "n9") {
-        input.innerText += "9";
+    if (e.target.classList.contains("number")) {
+        input.innerText += e.target.innerText;
     } else if (e.target.id == "float" && !floating) {
         input.innerText += ".";
         floating = true;
-    } else if (e.target.id == "add" && !numberOneDone && input.innerText) {
+    } else if (e.target.classList.contains("operator")) {
         numberOne = Number(input.innerText);
         input.innerText = "";
-        operator = "add";
-        topScreen.innerText += numberOne + "+";
-        numberOneDone = true;
-        floating = false;
-    } else if (e.target.id == "divide" && !numberOneDone && input.innerText) {
-        numberOne = Number(input.innerText);
-        input.innerText = "";
-        operator = "divide";
-        topScreen.innerText += numberOne + "/";
-        numberOneDone = true;
-        floating = false;
-    } else if (e.target.id == "subtract" && !numberOneDone && input.innerText) {
-        numberOne = Number(input.innerText);
-        input.innerText = "";
-        operator = "subtract";
-        topScreen.innerText += numberOne + "-";
-        numberOneDone = true;
-        floating = false;
-    } else if (e.target.id == "multiply" && !numberOneDone && input.innerText) {
-        numberOne = Number(input.innerText);
-        input.innerText = "";
-        operator = "multiply";
-        topScreen.innerText += numberOne + "x";
+        operator = e.target.id;
+        topScreen.innerText += numberOne + operators[operator][1];
         numberOneDone = true;
         floating = false;
     } else if (e.target.id == "equal" && numberOneDone && input.innerText) {
@@ -65,20 +33,7 @@ btnContainer.addEventListener("click", (e) => {
         topScreen.innerText = "";
         numberOneDone = false;
         floating = false;
-        switch (operator) {
-            case "add":
-                input.innerText = numberOne + numberTwo;
-                break;
-            case "divide":
-                input.innerText = numberOne / numberTwo;
-                break;
-            case "multiply":
-                input.innerText = numberOne * numberTwo;
-                break;
-            case "subtract":
-                input.innerText = numberOne - numberTwo;
-                break;
-        }
+        input.innerText = eval(`${numberOne}${operators[operator][0]}${numberTwo}`);
     } else if (e.target.id == "percentage" && input.innerText) {
         input.innerText = Number(input.innerText) / 100;
     } else if (e.target.id == "pm" && input.innerText) {

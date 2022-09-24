@@ -65,7 +65,7 @@ body {
     background-color: #a5a5a5;
     color: black;
 }
-.n0 {
+#n0 {
     grid-column: 1 / span 2;
     width: 170px;
     border-radius: 50px;
