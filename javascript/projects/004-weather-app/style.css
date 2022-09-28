@@ -13,7 +13,7 @@ body {
     border-bottom: 1px solid rgb(255, 255, 255);
     font-size: 2rem;
 }
-button {
+button#search {
     font-size: 2rem !important;
 }
 ::placeholder {
