@@ -1,9 +1,8 @@
 const input = document.querySelector("#input");
 const searchButton = document.querySelector("#search");
 const results = document.querySelector("#results");
-let isApiKeyValid = false;
 const validateApiKey = (key, expireCheck = false, isFirstTime = false) => {
-    axios
+    return axios
         .get(
             `https://api.openweathermap.org/data/2.5/weather?q=greenland&units=metric&appid=${key}`,
             { validateStatus: false }
@@ -11,7 +10,6 @@ const validateApiKey = (key, expireCheck = false, isFirstTime = false) => {
         .then((response) => {
             if (response.status == "200") {
                 localStorage.setItem("owm", btoa(key));
-                isApiKeyValid = true;
                 if (isFirstTime) {
                     Swal.fire({
                         icon: "success",
@@ -37,13 +35,13 @@ const validateApiKey = (key, expireCheck = false, isFirstTime = false) => {
             }
         });
 };
-const apiKey = (async function () {
+async function setApiKey() {
     if (localStorage.getItem("owm")) {
         const key = atob(localStorage.getItem("owm"));
         if (validateApiKey(key, true, false)) {
+            startEventListeners();
             return key;
         } else {
-            isApiKeyValid = false;
             return null;
         }
     } else {
@@ -60,9 +58,9 @@ const apiKey = (async function () {
         });
         if (key) {
             if (validateApiKey(key, false, true)) {
+                startEventListeners();
                 return key;
             } else {
-                isApiKeyValid = false;
                 return null;
             }
         } else {
@@ -72,31 +70,8 @@ const apiKey = (async function () {
             });
         }
     }
-})();
-const resultsArray = [];
-const getWeather = (location) => {
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${apiKey}`;
-
-    axios
-        .get(url, { validateStatus: false })
-        .then((response) => {
-            if (response.status == "200") {
-                console.log(response);
-                if (!resultsArray.includes(response.data.id)) {
-                    resultsArray.push(response.data.id);
-                    createWeatherCard(response.data);
-                } else {
-                    alert(`You already added ${response.data.name}`);
-                }
-            } else if (response.status == "404") {
-                alert(`${location} not found`);
-            } else {
-                throw new Error(response);
-            }
-        })
-        .catch((error) => console.log(error));
-};
-if (isApiKeyValid) {
+}
+const startEventListeners = () => {
     searchButton.addEventListener("click", () => {
         input.focus();
         if (input.value) {
@@ -114,7 +89,33 @@ if (isApiKeyValid) {
             results.removeChild(document.getElementById(id));
         }
     });
-}
+};
+let apiKey;
+(async function () {
+    apiKey = await setApiKey();
+})();
+const resultsArray = [];
+const getWeather = (location) => {
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${apiKey}`;
+
+    axios
+        .get(url, { validateStatus: false })
+        .then((response) => {
+            if (response.status == "200") {
+                if (!resultsArray.includes(response.data.id)) {
+                    resultsArray.push(response.data.id);
+                    createWeatherCard(response.data);
+                } else {
+                    alert(`You already added ${response.data.name}`);
+                }
+            } else if (response.status == "404") {
+                alert(`${location} not found`);
+            } else {
+                throw new Error(response);
+            }
+        })
+        .catch((error) => console.log(error));
+};
 const createWeatherCard = (data) => {
     const iconUrl = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${data.weather[0].icon}.svg`;
     const city = data.name;
