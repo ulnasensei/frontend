@@ -106,10 +106,16 @@ const getWeather = (location) => {
                     resultsArray.push(response.data.id);
                     createWeatherCard(response.data);
                 } else {
-                    alert(`You already added ${response.data.name}`);
+                    Swal.fire({
+                        icon: "warning",
+                        title: `You already added "${response.data.name}"`,
+                    });
                 }
             } else if (response.status == "404") {
-                alert(`${location} not found`);
+                Swal.fire({
+                    icon: "error",
+                    title: `Are you sure "${location}" is a real place?`,
+                });
             } else {
                 throw new Error(response);
             }
