@@ -39,3 +39,4 @@
 - [Vowel Counter](https://ulnasensei.github.io/frontend/javascript/coding-challenges/cc-05-vowels)
 - [Draw a Diamond](https://ulnasensei.github.io/frontend/javascript/coding-challenges/cc-06-draw-a-diamond)
 - [Bracket Validator](https://ulnasensei.github.io/frontend/javascript/coding-challenges/cc-07-bracket-validator)
+- [Sliding Window Maximum](https://ulnasensei.github.io/frontend/javascript/coding-challenges/cc-08-sliding-window-maximum)
