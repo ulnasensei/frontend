@@ -29,6 +29,7 @@
 -   [Todo List](https://ulnasensei.github.io/frontend/javascript/projects/002-todo-app)
 -   [IOS Calculator](https://ulnasensei.github.io/frontend/javascript/projects/003-ios-calculator)
 -   [Weather App](https://ulnasensei.github.io/frontend/javascript/projects/004-weather-app)
+-   [Digital Clock](https://ulnasensei.github.io/frontend/javascript/projects/005-digital-clock)
 
 ### Coding Challenges
 
