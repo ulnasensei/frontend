@@ -41,4 +41,4 @@
 - [Draw a Diamond](https://ulnasensei.github.io/frontend/javascript/coding-challenges/cc-06-draw-a-diamond)
 - [Bracket Validator](https://ulnasensei.github.io/frontend/javascript/coding-challenges/cc-07-bracket-validator)
 - [Sliding Window Maximum](https://ulnasensei.github.io/frontend/javascript/coding-challenges/cc-08-sliding-window-maximum)
-- [Palindromic and Perfect Numbers Lists](https://ulnasensei.github.io/frontend/javascript/coding-challenges/javascript/coding-challenges/cc-09-palindromic-and-perfect-numbers-lists/)
+- [Palindromic and Perfect Numbers Lists](https://ulnasensei.github.io/frontend/javascript/coding-challenges/cc-09-palindromic-and-perfect-numbers-lists/)
